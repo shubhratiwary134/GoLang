@@ -11,7 +11,8 @@ func main() {
 	fmt.Printf("remaining ticket is of %T type \n", remainingTickets)
 	var username string
 	var userTickets int
-	username = "tom"
+	fmt.Printf("enter your first name \n")
+	fmt.Scan(&username)
 	userTickets = 2
 	fmt.Printf("user named %v booked %v tickets \n", username, userTickets)
 }
