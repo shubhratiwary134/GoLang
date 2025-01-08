@@ -9,10 +9,17 @@ func main() {
 	fmt.Printf("welcome this is %v \n", nameOfConference)
 	fmt.Printf("Welcome to the booking app, the tickets available are %v and the total tickets are %v \n", remainingTickets, conferenceTickets)
 	fmt.Printf("remaining ticket is of %T type \n", remainingTickets)
+
+	//userTicket logic
 	var username string
 	var userTickets int
-	fmt.Printf("enter your first name \n")
+	var userEmail string
+	fmt.Printf("enter your name \n")
 	fmt.Scan(&username)
-	userTickets = 2
-	fmt.Printf("user named %v booked %v tickets \n", username, userTickets)
+	fmt.Printf("enter the tickets \n")
+	fmt.Scan(&userTickets)
+	fmt.Printf("enter the email of the user \n")
+	fmt.Scan(&userEmail)
+
+	fmt.Printf("user named %v booked %v tickets \n, you will be sent confirmation of the ticket at %v \n", username, userTickets, userEmail)
 }
