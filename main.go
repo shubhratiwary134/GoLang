@@ -3,6 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	var username = "shubhra , heir to the iron throne "
+	var username = "shubhra "
 	fmt.Print("hello ", username, "world")
 }
