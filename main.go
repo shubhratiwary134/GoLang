@@ -22,7 +22,6 @@ func main() {
 		var userEmail string
 		fmt.Printf("enter your name \n")
 		fmt.Scan(&username) // for taking the input you provide the pointer for the variable so that the scan function where to store the value inputted
-		bookings = append(bookings, username)
 		fmt.Printf("enter the tickets \n")
 		fmt.Scan(&userTickets)
 		fmt.Printf("enter the email of the user \n")
@@ -30,6 +29,7 @@ func main() {
 		isValidUserTicket := userTickets > 0 && userTickets <= remainingTickets
 		isValidEmail := strings.Contains(userEmail, "@")
 		if isValidUserTicket && isValidEmail {
+			bookings = append(bookings, username)
 			remainingTickets = remainingTickets - userTickets
 			fmt.Printf("user named %v booked %v tickets , you will be sent confirmation of the ticket at %v \n", username, userTickets, userEmail)
 			fmt.Printf("remaining tickets are %v \n", remainingTickets)
@@ -42,8 +42,12 @@ func main() {
 			}
 
 		} else {
-			fmt.Print("Invalid input\n")
-			continue
+			if !isValidEmail {
+				fmt.Print("wrong input email")
+			}
+			if !isValidUserTicket {
+				fmt.Print("Invalid User Ticket")
+			}
 		}
 
 	}
