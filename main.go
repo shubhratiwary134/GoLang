@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 	nameOfConference := "Go conference"
@@ -27,6 +29,12 @@ func main() {
 		fmt.Scan(&userEmail)
 		fmt.Printf("user named %v booked %v tickets , you will be sent confirmation of the ticket at %v \n", username, userTickets, userEmail)
 		fmt.Printf("remaining tickets are %v \n", remainingTickets)
+
+		bookingNames := []string{}
+		for _, booking := range bookings {
+			bookingNames = append(bookingNames, booking)
+		}
+		fmt.Print(bookingNames, "\n")
 	}
 
 }
