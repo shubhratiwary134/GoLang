@@ -25,8 +25,8 @@ func main() {
 		fmt.Printf("enter the tickets \n")
 		fmt.Scan(&userTickets)
 		if userTickets > remainingTickets {
-			fmt.Print("Numbers of tickets exceed the remaining tickets ")
-			break
+			fmt.Print("Numbers of tickets exceed the remaining tickets \n")
+			continue
 		}
 		remainingTickets = remainingTickets - userTickets
 		fmt.Printf("enter the email of the user \n")
