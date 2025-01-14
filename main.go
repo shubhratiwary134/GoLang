@@ -24,6 +24,10 @@ func main() {
 		bookings = append(bookings, username)
 		fmt.Printf("enter the tickets \n")
 		fmt.Scan(&userTickets)
+		if userTickets > remainingTickets {
+			fmt.Print("Numbers of tickets exceed the remaining tickets ")
+			break
+		}
 		remainingTickets = remainingTickets - userTickets
 		fmt.Printf("enter the email of the user \n")
 		fmt.Scan(&userEmail)
