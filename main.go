@@ -11,6 +11,7 @@ func main() {
 	var remainingTickets uint = 50
 	var bookings []string
 	fmt.Printf("welcome this is %v \n", nameOfConference)
+	greetUsers()
 	fmt.Printf("Welcome to the booking app, the tickets available are %v and the total tickets are %v \n", remainingTickets, conferenceTickets)
 	//Array
 	//var bookings [50]string
@@ -52,4 +53,8 @@ func main() {
 
 	}
 
+}
+
+func greetUsers() {
+	fmt.Print("welcome to our conference\n")
 }
