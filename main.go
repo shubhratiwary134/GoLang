@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -24,21 +25,25 @@ func main() {
 		bookings = append(bookings, username)
 		fmt.Printf("enter the tickets \n")
 		fmt.Scan(&userTickets)
-		if userTickets > remainingTickets {
-			fmt.Print("Numbers of tickets exceed the remaining tickets \n")
-			continue
-		}
-		remainingTickets = remainingTickets - userTickets
 		fmt.Printf("enter the email of the user \n")
 		fmt.Scan(&userEmail)
-		fmt.Printf("user named %v booked %v tickets , you will be sent confirmation of the ticket at %v \n", username, userTickets, userEmail)
-		fmt.Printf("remaining tickets are %v \n", remainingTickets)
+		isValidUserTicket := userTickets > 0 && userTickets <= remainingTickets
+		isValidEmail := strings.Contains(userEmail, "@")
+		if isValidUserTicket && isValidEmail {
+			remainingTickets = remainingTickets - userTickets
+			fmt.Printf("user named %v booked %v tickets , you will be sent confirmation of the ticket at %v \n", username, userTickets, userEmail)
+			fmt.Printf("remaining tickets are %v \n", remainingTickets)
 
-		var noTicketRemaining bool = remainingTickets == 0
+			var noTicketRemaining bool = remainingTickets == 0
 
-		if noTicketRemaining {
-			fmt.Print("All tickets are booked")
-			break
+			if noTicketRemaining {
+				fmt.Print("All tickets are booked")
+				break
+			}
+
+		} else {
+			fmt.Print("Invalid input\n")
+			continue
 		}
 
 	}
